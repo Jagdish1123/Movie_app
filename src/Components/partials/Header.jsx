@@ -16,7 +16,7 @@ function Header({ data }) {
         {data?.original_title || data?.name || data?.title || data?.original_name}
       </h1>
       <p className="w-[70%] text-white mt-3 mb-5">
-        {data?.overview?.slice(0, 200)} 
+        {data?.overview?.slice(0, 200)}
         <Link to={`/details/${data?.id}`} className="text-blue-400">..more</Link>
       </p>
       <p className="text-white mt-3 flex items-center gap-4">
@@ -28,8 +28,11 @@ function Header({ data }) {
         </span>
       </p>
 
-      <Link className='mt-5 p-5 bg-[#6556CD] rounded text-white font-semibold'>
-      WATCH Traliers
+      <Link
+        to={`/${data.media_type}/details/${data.id}/trailer`}
+
+        className='mt-5 p-5 bg-[#6556CD] rounded text-white font-semibold'>
+        WATCH Traliers
       </Link>
 
     </div>
